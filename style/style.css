@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+/* Logo font */
+@font-face {
+	font-family: 'Conv_cyber';
+	src: url('../font/cyber.eot');
+	src: local('☺'), url('../font/cyber.woff') format('woff'),
+	 url('../font/cyber.ttf') format('truetype'),
+	 url('../font/cyber.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+    font-family: 'Titillium Web', sans-serif;
+}
+body {
+    position: relative;
+    background-color: #000f3a;
+    background-image: url(../img/Cyber-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+h2 {
+    text-align: center;
+    margin: 10px;  
+    margin-bottom: 20px; 
+    font-family: 'Conv_cyber', sans-serif;
+    font-size: 3rem;
+    color: purple;
+}
+header {
+    text-align: left;
+    /* display: grid;
+    justify-content: center;
+    align-items: start; */
+    /* width: 1000px; */
+    margin: 0 auto;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+.form_labels {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+#queryField {
+    height: 20px;
+    /* border: 1px solid black; */
+    background: none;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    border-bottom: 1px purple solid;
+}
+#queryField::placeholder{
+    font-size: 1.5rem;
+    color: white;
+}
+#queryBtn{
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: purple;
+    font-weight: bold;
+border-radius: 5px;
+}
+.form_labels > label {
+    color: white;
+    cursor: pointer;
+}
+.form_labels > label >input{
+    cursor: pointer;
+    background-color: purple;
+}
+
+.form_radio {
+	margin-bottom: 10px;
+}
+.form_radio input[type=radio] {
+	display: none;
+}
+.form_radio label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 0;
+	line-height: 18px;
+    user-select: none;
+    color: white;
+}
+.form_radio label:before {
+	content: "";
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+    background: white;
+    border-radius: 50%;
+}
+ 
+/* Checked */
+.form_radio input[type=radio]:checked + label:before {
+    background: purple;
+    border-radius: 50%;
+    width: 18px;
+	height: 18px;
+}
+ 
+/* Hover */
+.form_radio label:hover:before {
+	filter: brightness(120%);
+}
+
+.input_btn_line {
+    margin: 0 auto;
+}
+#content_wrapper {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    /* grid-template-rows: max-content; */
+
+    margin: 0 auto;
+    column-count: 3;
+    column-gap: 20px;
+    row-gap: 20px;  
+}
+.wrapper_element {
+    cursor: pointer;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    box-sizing: border-box;
+    background: rgb(55, 55, 55);
+    border-radius: 4px;
+    height: max-content;
+    display: inline-block;
+    width: 100%;
+    background-color: white;
+
+}
+.wrapper-img{
+    width: 100%;
+    margin-bottom: 20px;
+    
+}
+.fullscreen {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(128, 0, 128, 0.5);
+}
+
+.fullscreen img {
+    width: 70vw;
+    pointer-events: none;
+    border-radius: 10px;
+}
+.pagination_wrapper {
+    width: 40%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    margin: 20px auto;
+}
+.page_number {
+    text-align: center;
+    cursor: pointer;
+    color: gray;
+    width: 90%;
+}
+.page_number:hover {
+    color: purple;
+    background-color: white;
+    border-radius: 5px;
+}
+.active_page {
+    color: white;
+background-color: purple;
+border-radius: 5px;
+}
