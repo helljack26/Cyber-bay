@@ -33,7 +33,7 @@ queryField.oninput = (e) => {
 
 form.onsubmit = () => sendRequest('', false)
 
-const contentWrapper = document.querySelector('.content_wrapper')
+const contentWrapper = document.getElementById('content_wrapper')
 
 // Pagination 
 function paginationControl(type) {
@@ -79,7 +79,8 @@ function sendRequest(pageNumber=1, initialLoad) {
             var image = new Image();
             
             image.addEventListener('load', function() {
-                wrapperElement.style.backgroundImage = 'url(' + src + ')';
+                // wrapperElement.style.backgroundImage = 'url(' + src + ')';
+                wrapperElement.innerHTML= `<img src='${src}' class='wrapper-img'/>`;
                 spinner.remove()
             });
             image.src = src;
@@ -89,7 +90,7 @@ function sendRequest(pageNumber=1, initialLoad) {
             wrapperElement.onclick = () => {
                 const fullscreen = document.createElement('div')
                 fullscreen.classList.add('fullscreen')
-                fullscreen.innerHTML = `<img src=${elementObject.largeImageURL}/>`
+                fullscreen.innerHTML = `<img src=${elementObject.largeImageURL} class='fullscreen-img'/>`
                 
                 // Task1: smooth appending with CSS transition
                 document.body.appendChild(fullscreen)
