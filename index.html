@@ -12,29 +12,31 @@
 <body>
     <header>
         <h2>Cyber Bay</h2>
+        <!-- Search -->
         <form name="queryline">
-            <div class="input_btn_line">
-            <input type="text" name="queryField" id="queryField" placeholder="Search">
+            <div class="input_btn_line">        
+            <input type="text" name="queryField" id="queryField" placeholder="Search" autofocus>
             <input type="submit" value="Search" id="queryBtn">
         </div>
+        <!-- Checkbox -->
             <div class="form_labels">
-                <label for="popular">
-                    Popular content
-                    <input type="radio" name="popular_fresh" id="popular" value="popular">
-                </label>
-                <label for="fresh">
-                    Fresh content
-                    <input type="radio" name="popular_fresh" id="fresh" value="latest">
-                </label>
+                <div class="form_radio">
+                    <input type="radio" name="popular_fresh" id="popular" class="form-check" value="popular">
+                    <label for="popular">Popular content</label>
+                </div>
+                <div class="form_radio">
+                    <input type="radio" name="popular_fresh" id="fresh" class="form-check" value="latest">
+                    <label for="fresh">Fresh content</label>
+                </div>
             </div>
         </form>
     </header>
+    <!-- Image container -->
     <div class="content_wrapper">
     </div>
+    <!-- Pagination -->
     <div class="pagination_wrapper">
-
     </div>
-    <div class="loader">Loading...</div>
     <script src="script/script.js"></script>
 </body>
 </html>

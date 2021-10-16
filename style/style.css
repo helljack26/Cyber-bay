@@ -19,7 +19,8 @@
 }
 body {
     position: relative;
-    /* background-image: url(../img/Cyber-background.png); */
+    background-color: #000f3a;
+    background-image: url(../img/Cyber-background.png);
 }
 h2 {
     text-align: center;
@@ -33,7 +34,6 @@ header {
     display: grid;
     justify-content: center;
     width: 1000px;
-    border: 1px solid rgb(205, 205, 205);
     margin: 0 auto;
 }
 form {
@@ -49,11 +49,17 @@ form {
 #queryField {
     height: 20px;
     /* border: 1px solid black; */
-    background-color: none;
+    background: none;
     padding: 5px 10px;
     outline: none;
     border: none;
+    font-size: 1.5rem;
+    color: white;
     border-bottom: 1px purple solid;
+}
+#queryField::placeholder{
+    font-size: 1.5rem;
+    color: white;
 }
 #queryBtn{
     padding: 5px 10px;
@@ -62,6 +68,55 @@ form {
     background-color: purple;
     font-weight: bold;
 border-radius: 5px;
+}
+.form_labels > label {
+    color: white;
+    cursor: pointer;
+}
+.form_labels > label >input{
+    cursor: pointer;
+    background-color: purple;
+}
+
+.form_radio {
+	margin-bottom: 10px;
+}
+.form_radio input[type=radio] {
+	display: none;
+}
+.form_radio label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 0;
+	line-height: 18px;
+    user-select: none;
+    color: white;
+}
+.form_radio label:before {
+	content: "";
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+    background: white;
+    border-radius: 50%;
+}
+ 
+/* Checked */
+.form_radio input[type=radio]:checked + label:before {
+    background: purple;
+    border-radius: 50%;
+    width: 18px;
+	height: 18px;
+}
+ 
+/* Hover */
+.form_radio label:hover:before {
+	filter: brightness(120%);
 }
 
 .input_btn_line {
@@ -99,11 +154,13 @@ border-radius: 5px;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(128, 128, 128, 0.6);
+
+    background: rgb(128, 0, 128, 0.5);
 }
 .fullscreen img {
-    width: 70%;
+    width: 70vw;
     pointer-events: none;
+    border-radius: 10px;
 }
 
 .pagination_wrapper {
@@ -116,10 +173,16 @@ border-radius: 5px;
 .page_number {
     text-align: center;
     cursor: pointer;
+    color: gray;
+    width: 90%;
 }
 .page_number:hover {
-    color: tomato
+    color: purple;
+    background-color: white;
+    border-radius: 5px;
 }
 .active_page {
-    color: tomato;
+    color: white;
+background-color: purple;
+border-radius: 5px;
 }

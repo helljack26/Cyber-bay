@@ -27,19 +27,15 @@ radioBtn.forEach(e => {
     })
 })
 
-
 queryField.oninput = (e) => {
     query = e.target.value
 }
 
 form.onsubmit = () => sendRequest('', false)
 
-
 const contentWrapper = document.querySelector('.content_wrapper')
-const fullScreen = function() {
-    console.log('fullscreen mode')
-}
 
+// Pagination 
 function paginationControl(type) {
     if(type == 'fwd') {
         pageCounter += 1
@@ -55,26 +51,19 @@ function paginationControl(type) {
         <span class="page_number">${pageCounter+1}</span>
         ${pageCounter == totalPages ? `<span class="page_number" id="page_right"></span>` : `<span onclick="paginationControl('fwd')" class="page_number" id="page_right">&rarr;</span>`}
     `
+    console.log("TCL: paginationControl -> pageCounter == totalPages", pageCounter, totalPages)
     sendRequest(pageCounter, false)
 }
 
-//
-
+// Request to Pixabay
 function sendRequest(pageNumber=1, initialLoad) {
     // storing last query in Local Storage
     if(initialLoad == false) localStorage.setItem('lastRequest', query)
-    console.log(query)
     fetch(url+`&q=${localStorage.getItem('lastRequest')}&order=${extQuery1 || 'popular'}&page=${pageNumber}&per_page=${perPage}`).then(response1 => {
         return response1.json()
     }).then(response2 => {
         const contentObject = response2.hits
         totalPages = Math.ceil(response2.total/perPage)
-
-        // pagination logic
-        if(initialLoad) {
-            paginationControl()
-        }
-
         contentWrapper.innerHTML = ''
         contentObject.forEach(elementObject => {
             // creating image preview container
