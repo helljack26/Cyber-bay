@@ -3,7 +3,7 @@ const url = 'https://pixabay.com/api/?key=23641816-dcf4d4f9c34852472448f65fc&pag
 const form = document.forms.namedItem('queryline')
 let query = ''
 let extQuery1 = ''
-let perPage = 8
+let perPage = 20;
 let totalPages
 let pageCounter = 1
 
@@ -75,12 +75,16 @@ function sendRequest(pageNumber=1, initialLoad) {
             wrapperElement.appendChild(spinner)
 
             var src = elementObject.webformatURL
+            let imgWidth = elementObject.webformatWidth
+            imgWidth = 10;
 
             var image = new Image();
             
             image.addEventListener('load', function() {
                 // wrapperElement.style.backgroundImage = 'url(' + src + ')';
-                wrapperElement.innerHTML= `<img src='${src}' class='wrapper-img'/>`;
+                wrapperElement.innerHTML= `<img src='${src}' class='wrapper-img' style:'width: ${imgWidth}'/>
+                <p class='wrapper-tags'>${elementObject.tags}</p>
+                `;
                 spinner.remove()
             });
             image.src = src;
