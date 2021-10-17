@@ -44,8 +44,8 @@ function paginationControl(type) {
     }
 
     paginationWrapper.innerHTML = `
-        ${pageCounter <= 1 ? `<span class="page_number" id="page_left"></span>` : `<span onclick="paginationControl('back')" class="page_number" id="page_left">&larr;</span>`}
-        <span class="page_number">${pageCounter <= 1 ? '' : pageCounter-1}</span>
+        ${pageCounter <= 1 ? `<span class="page_number disable" id="page_left" ></span>` : `<span onclick="paginationControl('back')" class="page_number" id="page_left">&larr;</span>`}
+        ${pageCounter <= 1 ? `<span class="page_number disable"></span>` : `<span class="page_number">${pageCounter-1}</span>`}
         <span class="page_number active_page">${pageCounter}</span>
         <span class="page_number">${pageCounter+1}</span>
         ${pageCounter == totalPages ? `<span class="page_number" id="page_right"></span>` : `<span onclick="paginationControl('fwd')" class="page_number" id="page_right">&rarr;</span>`}

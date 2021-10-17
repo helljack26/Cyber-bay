@@ -6,11 +6,13 @@
     padding: 0;
     font-family: serif;
     font-family: 'Titillium Web', sans-serif;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Body style */
 body {
     position: relative;
+
 }
 
 h2 {
@@ -48,6 +50,7 @@ header {
     filter: contrast(0.1);
     cursor: pointer;
     padding: 8px;
+    border-radius: 50%;
     overflow: visible;
 }
 .header-right>img:hover{
@@ -263,6 +266,7 @@ main {
 }
 
 .pagination_wrapper {
+    user-select: none;
     width: 40%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -273,18 +277,39 @@ main {
 .page_number {
     text-align: center;
     cursor: pointer;
-    color: gray;
-    width: 90%;
+    color: rgb(72, 72, 72);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .page_number:hover {
-    color: purple;
-    background-color: white;
-    border-radius: 5px;
+    color: white;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .active_page {
     color: white;
-    background-color: purple;
-    border-radius: 5px;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.active_page:hover{
+    border-radius: 50%;
+    color: rgb(82, 82, 82);
+    background-color: rgba(255, 0, 0, 0.967);
+}
+
+.disable:hover {
+    background-color: white;
+    cursor: default;
 }
