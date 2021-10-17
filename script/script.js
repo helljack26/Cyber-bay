@@ -20,7 +20,6 @@ const paginationWrapper = document.querySelector('.pagination_wrapper')
 const pageLeft = document.getElementById('page_left')
 const pageRight = document.getElementById('page_right')
 
-
 radioBtn.forEach(e => {
     e.addEventListener('change', (chckb) => {
         extQuery1 = chckb.target.value
@@ -74,14 +73,13 @@ function sendRequest(pageNumber=1, initialLoad) {
             wrapperElement.classList.add('wrapper_element')
             wrapperElement.appendChild(spinner)
 
-            var src = elementObject.webformatURL
-            let imgWidth = elementObject.webformatWidth
-            imgWidth = 10;
+            var src = elementObject.previewURL
+            let imgWidth = elementObject.previewWidth
+            imgWidth = 500;
 
             var image = new Image();
             
             image.addEventListener('load', function() {
-                // wrapperElement.style.backgroundImage = 'url(' + src + ')';
                 wrapperElement.innerHTML= `<img src='${src}' class='wrapper-img' style:'width: ${imgWidth}'/>
                 <p class='wrapper-tags'>${elementObject.tags}</p>
                 `;
