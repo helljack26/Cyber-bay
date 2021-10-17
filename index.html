@@ -1,54 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style/style.css" />
+		<link rel="stylesheet" href="style/spinner.css" />
+		<link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+		<title>Qinterest</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/spinner.css">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-    <title>Qinterest</title>
-</head>
-
-<body>
-    <header>
-        <!-- Site logo -->
-        <div class="logo"><img src="img/Qinterest logo.png" alt="Site logo" class="logo-img"></div>
-        <!-- Search -->
-        <form name="queryline" autocomplete="on">
-            <div class="input_btn_line">
-                <input type="text" name="queryField" id="queryField" placeholder="&#127955; Search">
-            </div>
-            <!-- Checkbox -->
-            <div class="form_labels">
-                <div class="form_radio">
-                    <input type="radio" name="popular_fresh" id="popular" class="form-check" value="popular">
-                    <label for="popular">Popular</label>
-                </div>
-                <div class="form_radio">
-                    <input type="radio" name="popular_fresh" id="fresh" class="form-check" value="latest">
-                    <label for="fresh">Fresh</label>
-                </div>
-            </div>
-                    <div class="header-right">
-                        <img src="img/icon/bell.svg" alt="Bell icon" class="header-right_img">
-                        <img src="img/icon/comment-dots.svg" alt="Comments icon" class="header-right_img">
-                        <span class="user-icon">U</span>
-                        <span class="down-icon">v</span>
-                    </div>
-        </form>
-
-    </header>
-    <main>
-        <!-- Image container -->
-        <div id="content_wrapper">
-        </div>
-        <!-- Pagination -->
-        <div class="pagination_wrapper">
-        </div>
-    </main>
-    <script src="script/script.js"></script>
-</body>
-
+	<body>
+		<header>
+			<!-- Site logo -->
+			<div class="logo">
+				<img
+					src="img/Qinterest logo.png"
+					alt="Site logo"
+					class="logo-img"
+				/>
+			</div>
+			<!-- Search -->
+			<form name="queryline" autocomplete="on">
+				<div class="input_btn_line">
+					<input
+						type="text"
+						name="queryField"
+						id="queryField"
+						placeholder="&#127955; Search"
+					/>
+				</div>
+				<!-- Checkbox -->
+				<div class="form_labels">
+					<div class="form_radio">
+						<input
+							type="radio"
+							name="popular_fresh"
+							id="popular"
+							class="form-check"
+							value="popular"
+						/>
+						<label for="popular">Popular</label>
+					</div>
+					<div class="form_radio">
+						<input
+							type="radio"
+							name="popular_fresh"
+							id="fresh"
+							class="form-check"
+							value="latest"
+						/>
+						<label for="fresh">Fresh</label>
+					</div>
+				</div>
+				<div class="header-right">
+					<img
+						src="img/icon/bell.svg"
+						alt="Bell icon"
+						class="header-right_img"
+					/>
+					<img
+						src="img/icon/comment-dots.svg"
+						alt="Comments icon"
+						class="header-right_img"
+					/>
+					<span class="user-icon">U</span>
+					<span class="down-icon">v</span>
+				</div>
+			</form>
+		</header>
+		<main>
+			<!-- Image container -->
+			<div id="content_wrapper"></div>
+			<!-- Pagination -->
+			<div class="pagination_wrapper"></div>
+		</main>
+		<script src="script/script.js"></script>
+	</body>
 </html>
